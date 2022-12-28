@@ -27,8 +27,9 @@ function Playlist({item}) {
     }
 
     const handleClick2 = () => {
-        /*const playlists = document.getElementById("playlists");
-        playlists.innerHTML = data?.items ? (data.items.map((item) => 
+        const playlists = document.getElementById("playlists");
+        playlists.innerHTML = "";
+        /*playlists.innerHTML = data?.items ? (data.items.map((item) => 
             `<p key=${item.track.name}>${item.track.name}</p>
             <img src=${item.track.album.images[0].url} alt=${item.name}></img>`
         )) : null;

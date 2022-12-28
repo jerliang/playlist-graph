@@ -59,6 +59,8 @@ function getGraph() {
     }
 
     const container = document.getElementById("playlists");
+    container.style.width = "500px";
+    container.style.height = "500px";
     const renderer = new Sigma(graph, container)
 }
 
