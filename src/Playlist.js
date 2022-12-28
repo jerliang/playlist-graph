@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import { getGraph } from "./PlaylistGraph"
+
+export let playlistData = {};
 
 function Playlist({item}) {
 
@@ -24,12 +27,13 @@ function Playlist({item}) {
     }
 
     const handleClick2 = () => {
-        const playlists = document.getElementById("playlists");
+        /*const playlists = document.getElementById("playlists");
         playlists.innerHTML = data?.items ? (data.items.map((item) => 
             `<p key=${item.track.name}>${item.track.name}</p>
             <img src=${item.track.album.images[0].url} alt=${item.name}></img>`
         )) : null;
-        playlists.innerHTML = playlists.innerHTML.replaceAll('</p>,', '');
+        playlists.innerHTML = playlists.innerHTML.replaceAll('</p>,', '');*/
+        getGraph();
     };
 
     const handleClick1 = () => {
@@ -40,6 +44,7 @@ function Playlist({item}) {
         })
         .then((response) => {
             setData(response.data);
+            playlistData = response.data;
         })
         .catch((error) => {
             console.log(error);
